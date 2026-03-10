@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - CV_DAVIN I.</title>
+    <link rel="stylesheet" href="About-style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-title">CV-DAVIN I.</div>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="header">
+        <h1 class="neon-title">Tentang Saya</h1>
+        <p class="intro">
+            Saya adalah seorang siswa yang memiliki berbagai minat dalam teknologi,
+            kreativitas digital, serta hiburan. Saya menikmati proses belajar hal baru
+            dan mencoba mengembangkan kemampuan melalui berbagai aktivitas yang saya sukai.
+        </p>
+    </section>
+
+    <!-- HOBBY -->
+    <section class="hobby">
+        <h2 class="section-title">Hobi Favorit</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="Gaming.20ed7782-0eda-4f9d-b421-4cc47492edc6" alt="Gaming">
+                <p>Gaming</p>
+            </div>
+            <div class="card">
+                <img src="hobi2.webp" alt="Basket">
+                <p>Bermain basket</p>
+            </div>
+            <div class="card">
+                <img src="hobi.3.webp" alt="Robotics">
+                <p>Robotics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section class="achievement">
+        <h2 class="section-title">Achievements</h2>
+        <div class="grid">
+            <a href="#" class="card popup-trigger" data-popup="ach1">
+                <img src="kumon.jpg" alt="KUMON">
+                <p>KUMON</p>
+            </a>
+            <a href="#" class="card popup-trigger" data-popup="ach2">
+                <img src="baskett.jpg" alt="Basket">
+                <p>TANDING BASKET</p>
+            </a>
+            <a href="#" class="card popup-trigger" data-popup="ach3">
+                <img src="ach3.jpeg" alt="Penghargaan">
+                <p>PENGHARGAAN SEKOLAH</p>
+            </a>
+            <a href="#" class="card popup-trigger" data-popup="ach4">
+                <img src="baptism.jpg" alt="Baptis">
+                <p>BAPTIS</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- POPUP / MODAL -->
+    <div id="ach1" class="popup">
+        <a href="#" class="close">✖</a>
+        <div class="popup-gallery">
+            <img src="kumon1.jpeg" alt="Kumon 1">
+            <img src="kumon2.jpeg" class="portrait" alt="Kumon 2">
+            <img src="kumon4.jpeg" class="portrait" alt="Kumon 4">
+            <img src="kumon3.jpeg" alt="Kumon 3">
+            <img src="kumon5.jpeg" alt="Kumon 5">
+        </div>
+    </div>
+
+    <div id="ach2" class="popup">
+        <a href="#" class="close">✖</a>
+        <div class="popup-gallery">
+            <img src="basket1.jpeg" alt="Basket 1">
+            <img src="basket2.jpg" alt="Basket 2">
+        </div>
+    </div>
+
+    <div id="ach3" class="popup">
+        <a href="#" class="close">✖</a>
+        <div class="popup-gallery modern-gallery">
+            <img src="ps4.jpeg" class="portrait" alt="PS4">
+            <img src="ps2.jpeg" class="portrait" alt="PS2">
+            <img src="ps3.jpeg" class="portrait" alt="PS3">
+        </div>
+    </div>
+
+    <div id="ach4" class="popup">
+        <a href="#" class="close">✖</a>
+        <div class="popup-gallery">
+            <img src="baptis1.jpeg" alt="Baptis 1">
+            <img src="baptis2.jpeg" alt="Baptis 2">
+            <img src="baptis3.jpeg" alt="Baptis 3">
+            <img src="baptis4.jpeg" alt="Baptis 4">
+            <img src="baptis5.jpeg" alt="Baptis 5">
+        </div>
+    </div>
+
+    <!-- FOOD -->
+    <section class="food">
+        <h2 class="section-title">Makanan Favorit</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="makanan fav.jpg" alt="Pizza">
+                <p>Pizza</p>
+            </div>
+            <div class="card">
+                <img src="subway.jpg" alt="Ramen">
+                <p>Subway</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DRINK -->
+    <section class="drink">
+        <h2 class="section-title">Minuman Favorit</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="minuman favorit.jpg" alt="Susu">
+                <p>Susu</p>
+            </div>
+            <div class="card">
+                <img src="teh.jpeg" alt="Coffee">
+                <p>Teh</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSIC PLAYER -->
+    <section class="music-section">
+        <h2 class="section-title">Favorite Music</h2>
+        <div class="music-player">
+            <div class="music-container">
+                <img src="bds.png" class="music-cover" alt="Music Cover">
+            </div>
+            <h3 id="music-title">My Favorite Song</h3>
+            <p class="music-subtitle">Raindance - Dave 🎧</p>
+            <audio id="audio" src="Dave - Raindance (Lyrics) ft. Tems.mp3"></audio>
+            <div class="controls">
+                <button id="playBtn">▶</button>
+                <div class="progress-container">
+                    <div id="progress"></div>
+                </div>
+            </div>
+            <div class="extra-controls">
+                <button onclick="backward()">⏪</button>
+                <button onclick="forward()">⏩</button>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHOOL -->
+    <section class="school">
+        <h2 class="section-title">SMA Tujuan</h2>
+        <a href="https://www.uph.edu/id/" target="_blank">
+            <img src="uph.avif" class="school-logo" alt="UPH Logo">
+        </a>
+        <p>Universitas Pelita Harapan</p>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote">
+        <h2 class="section-title">Quotes</h2>
+        <p class="quote-text">
+            "Dream big, stay curious, and never stop learning."
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Student Website | Created with ❤️</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Audio Player
+        const audio = document.getElementById("audio");
+        const playBtn = document.getElementById("playBtn");
+        const progress = document.getElementById("progress");
+        const progressContainer = document.querySelector(".progress-container");
+        const volume = document.getElementById("volume");
+
+        // Play/Pause
+        playBtn.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = "⏸";
+            } else {
+                audio.pause();
+                playBtn.textContent = "▶";
+            }
+        });
+
+        // Progress Bar
+        audio.addEventListener("timeupdate", () => {
+            const percent = (audio.currentTime / audio.duration) * 100;
+            progress.style.width = percent + "%";
+        });
+
+        // Seek
+        progressContainer.addEventListener("click", (e) => {
+            const width = progressContainer.clientWidth;
+            const clickX = e.offsetX;
+            const duration = audio.duration;
+            audio.currentTime = (clickX / width) * duration;
+        });
+
+        // Volume
+        volume.addEventListener("input", () => {
+            audio.volume = volume.value;
+        });
+
+        // Skip
+        function forward() {
+            audio.currentTime += 10;
+        }
+
+        function backward() {
+            audio.currentTime -= 10;
+        }
+
+        // Close Popup (FIXED)
+        document.querySelectorAll('.close').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                history.pushState('', document.title, window.location.pathname + window.location.search);
+                document.querySelectorAll('.popup').forEach(popup => {
+                    popup.style.display = 'none';
+                });
+            });
+        });
+
+        // Close Popup when clicking outside
+        document.querySelectorAll('.popup').forEach(popup => {
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    history.pushState('', document.title, window.location.pathname + window.location.search);
+                    popup.style.display = 'none';
+                }
+            });
+        });
+
+        // Handle Browser Back Button
+        window.addEventListener('popstate', () => {
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
+        });
+
+        // Open Popup via Data Attribute
+        document.querySelectorAll('.popup-trigger').forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const popupId = trigger.getAttribute('data-popup');
+                const popup = document.getElementById(popupId);
+                if (popup) {
+                    // Hapus hash dari URL
+                    history.pushState('', document.title, window.location.pathname + window.location.search);
+                    // Tutup semua popup lain
+                    document.querySelectorAll('.popup').forEach(p => {
+                        p.style.display = 'none';
+                    });
+                    // Tampilkan popup yang dipilih
+                    popup.style.display = 'flex';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

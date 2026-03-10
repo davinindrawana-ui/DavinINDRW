@@ -1,0 +1,797 @@
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+        linear-gradient(135deg, rgba(15, 32, 39, 0.95), rgba(32, 58, 67, 0.95), rgba(44, 83, 100, 0.95)),
+        url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px 60px;
+    background: black;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-title {
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #00ffff;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    padding: 70px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.neon-title {
+    font-size: 48px;
+    text-shadow:
+        0 0 5px cyan,
+        0 0 10px cyan,
+        0 0 20px cyan,
+        0 0 40px cyan;
+    margin-bottom: 20px;
+}
+
+.intro {
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* ============================================
+   SECTION TITLE
+   ============================================ */
+.section-title {
+    font-size: 36px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px cyan;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: cyan;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* ============================================
+   GRID LAYOUT
+   ============================================ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 0 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ============================================
+   CARD
+   ============================================ */
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 15px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    aspect-ratio: 1/1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.card img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 25px rgb(0, 187, 255);
+    border-color: cyan;
+}
+
+.card img:hover {
+    transform: scale(1.08);
+}
+
+.card p {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* ============================================
+   POPUP / MODAL
+   ============================================ */
+/* ============================================
+   POPUP / MODAL
+   ============================================ */
+.popup {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 70px);
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+    padding: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px; /* ✅ DIPERBAIKI */
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: cyan;
+    transform: rotate(90deg);
+}
+
+.popup-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 80px;
+    max-width: 1000px;
+    padding: 40px;
+    width: 100%;
+}
+
+.popup-gallery img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.35s;
+    box-shadow: 0 0 10px black;
+    background: #a99f6496;
+    padding: 5px;
+}
+
+.popup-gallery img.portrait {
+    grid-row: span 2;
+}
+
+.popup-gallery img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 25px rgb(255, 234, 0);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .header {
+        padding: 50px 15px;
+    }
+
+    .neon-title {
+        font-size: 36px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .grid {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .card {
+        aspect-ratio: 1/1;
+    }
+
+    .popup-gallery {
+        grid-auto-rows: 150px;
+        gap: 15px; /* ✅ DIPERBAIKI */
+        padding: 20px;
+    }
+
+    .music-player {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .music-cover {
+        width: 150px;
+        height: 150px;
+    }
+
+    .school-logo {
+        width: 200px;
+    }
+
+    .quote-text {
+        font-size: 18px;
+    }
+
+    .close {
+        top: 15px;
+        right: 5px; /* ✅ DIPERBAIKI */
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .neon-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popup-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+    }
+
+    .extra-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #volume {
+        width: 150px;
+    }
+}
+/* ============================================
+   MUSIC PLAYER (Lanjutan)
+   ============================================ */
+/* ============================================
+   MUSIC PLAYER (NO NEON SPINNER)
+   ============================================ */
+.music-section {
+    margin-top: 80px;
+}
+
+.music-player {
+    width: 300px;
+    margin: auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transition: 0.4s;
+}
+
+.music-player:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px cyan;
+}
+
+.music-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+}
+
+.music-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 15px;
+    animation: spin 6s linear infinite;
+    /* Tidak ada box-shadow */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#playBtn {
+    font-size: 24px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 50%;
+    background: cyan;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#playBtn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px cyan;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.progress-container {
+    flex: 1;
+    height: 6px;
+    background: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+#progress {
+    height: 6px;
+    width: 0%;
+    background: cyan;
+    border-radius: 10px;
+    transition: width 0.1s linear;
+}
+
+.extra-controls {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.extra-controls button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.extra-controls button:hover {
+    color: cyan;
+    transform: scale(1.2);
+}
+
+#volume {
+    width: 100px;
+    cursor: pointer;
+}
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: cyan;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volume::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: cyan;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+
+/* ============================================
+   SCHOOL
+   ============================================ */
+/* ============================================
+   SCHOOL (FIXED)
+   ============================================ */
+.school {
+    margin-top: 80px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 36px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px cyan;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: cyan;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.school-logo {
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    transition: 0.4s;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.school-logo:hover {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 15px cyan);
+}
+
+.school p {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+
+/* ============================================
+   QUOTE
+   ============================================ */
+.quote {
+    margin-top: 80px;
+    padding: 60px 20px;
+}
+
+.quote-text {
+    font-size: 22px;
+    font-style: italic;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+    line-height: 1.6;
+    padding: 20px;
+    border-left: 4px solid cyan;
+    background: rgba(0, 255, 255, 0.05);
+    border-radius: 0 10px 10px 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    margin-top: 80px;
+    padding: 20px;
+    background: black;
+    border-top: 2px solid rgb(163, 167, 167);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .header {
+        padding: 50px 15px;
+    }
+
+    .neon-title {
+        font-size: 36px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .grid {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .card {
+        aspect-ratio: 1/1;
+    }
+
+    .popup-gallery {
+        grid-auto-rows: 150px;
+        gap: 50px;
+        padding: 20px;
+    }
+
+    .music-player {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .music-cover {
+        width: 150px;
+        height: 150px;
+    }
+
+    .school-logo {
+        width: 200px;
+    }
+
+    .quote-text {
+        font-size: 18px;
+    }
+
+    .close {
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .neon-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .popup-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 180px;
+    }
+
+    .extra-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #volume {
+        width: 150px;
+    }
+}
+
+/* ============================================
+   SCROLLBAR CUSTOM
+   ============================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: cyan;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00d4ff;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header, .hobby, .achievement, .food, .drink, .music-section, .school, .quote {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ============================================
+   LOADING SPINNER (Optional)
+   ============================================ */
+@keyframes spin-border {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin-border 1s linear infinite;
+}
+
+/* ============================================
+   HOVER EFFECTS FOR SECTIONS
+   ============================================ */
+section {
+    transition: 0.3s;
+}
+
+section:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* ============================================
+   TEXT SELECTION COLOR
+   ============================================ */
+::selection {
+    background: cyan;
+    color: black;
+}
+
+/* ============================================
+   FOCUS STYLES FOR ACCESSIBILITY
+   ============================================ */
+/* ============================================
+   FOCUS STYLES (NO NEON OUTLINE)
+   ============================================ */
+
+
+/* Atau jika ingin tetap ada focus tapi tidak neon */
+a:focus, button:focus, input:focus {
+    outline: 2px solid transparent;
+    box-shadow: none;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+
+    .navbar, .popup, .music-player {
+        display: none;
+    }
+
+    .card {
+        background: white;
+        color: black;
+        border: 1px solid #ccc;
+    }
+}
+
